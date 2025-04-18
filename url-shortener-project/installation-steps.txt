@@ -1,0 +1,22 @@
+ssh root@YOUR_DROPLET_IP
+
+git clone https://github.com/forlorn1216/url-short
+
+apt install -y nodejs npm
+
+npm install
+
+nano .env  
+PORT=5000
+MONGO_URI=mongodb+srv://<copy>.mongo.ondigitalocean.com/admin?retryWrites=true&w=majority
+BASE_URL=http://<droplet-ip>:5000
+
+npm install -g pm2
+
+pm2 start server.js
+
+pm2 startup
+pm2 save
+
+
+
