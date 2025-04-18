@@ -1,0 +1,26 @@
+{
+    "name": "url-shortener-project",
+    "version": "1.0.0",
+    "description": "Serverless URL Shortener with Analytics, QR, Expiry and Password Protection",
+    "main": "backend/server.js",
+    "scripts": {
+        "start": "node backend/server.js",
+        "dev": "nodemon backend/server.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.18.2",
+        "json2csv": "^6.0.0-alpha.2",
+        "mongoose": "^7.0.3",
+        "nanoid": "^5.1.5",
+        "node-fetch": "^3.3.2",
+        "qrcode": "^1.5.1",
+        "shortid": "^2.2.17",
+        "ua-parser-js": "^1.0.40"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}

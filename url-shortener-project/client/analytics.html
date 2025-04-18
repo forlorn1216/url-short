@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Analytics Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>URL Analytics Dashboard</h1>
+    <p>Track and analyze performance of your shortened links</p>
+    <nav class="main-nav">
+      <a href="index.html">Shortener</a>
+      <a href="analytics.html" class="active nav-button">Analytics Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="form-section">
+      <form id="analytics-form" class="shorten-form">
+        <div class="form-group">
+          <label for="shortCode">Short URL Code</label>
+          <input type="text" id="shortCode" placeholder="Enter short code (e.g., xyz123)" required>
+        </div>
+        <button type="submit" class="btn-primary">Get Analytics</button>
+      </form>
+    </section>
+
+    <section id="analyticsResult" class="result-section hidden">
+      <div class="analytics-header">
+        <h2>Analytics Overview</h2>
+        <p>Total Clicks: <span id="totalClicks" class="highlight-number">0</span></p>
+      </div>
+      
+      <div class="analytics-grid">
+        <div class="chart-container">
+          <h3>Clicks Over Time</h3>
+          <canvas id="clicksByDateChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>Clicks by Hour</h3>
+          <canvas id="clicksByHourChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>Top Locations</h3>
+          <canvas id="locationStatsChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>Device Breakdown</h3>
+          <canvas id="deviceStatsChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>Referrer Sources</h3>
+          <canvas id="referrerStatsChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="export-section">
+        <a id="exportCSV" class="btn-secondary">Export as CSV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 URL Shortener. All rights reserved.</p>
+    <nav class="footer-nav">
+      <a href="index.html">URL Shortener</a> | 
+      <a href="analytics.html" class="active">Analytics</a>
+    </nav>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+</body>
+</html>
